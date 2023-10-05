@@ -20,7 +20,7 @@ Bitnami charts for Helm are carefully engineered, actively maintained and are th
 
 This chart bootstraps an [Mastodon](https://www.mastodon.com/) Deployment in a [Kubernetes](https://kubernetes.io) cluster using the [Helm](https://helm.sh) package manager.
 
-Bitnami charts can be used with [Kubeapps](https://kubeapps.com/) for deployment and management of Helm charts in clusters.
+Bitnami charts can be used with [Kubeapps](https://kubeapps.dev/) for deployment and management of Helm charts in clusters.
 
 [Learn more about the default configuration of the chart](https://docs.bitnami.com/kubernetes/apps/mastodon/get-started/).
 
@@ -81,7 +81,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `diagnosticMode.args`    | Args to override all containers in the deployment                                                                                                   | `["infinity"]`       |
 | `image.registry`         | Mastodon image registry                                                                                                                             | `docker.io`          |
 | `image.repository`       | Mastodon image repository                                                                                                                           | `bitnami/mastodon`   |
-| `image.tag`              | Mastodon image tag (immutable tags are recommended)                                                                                                 | `4.1.7-debian-11-r0` |
+| `image.tag`              | Mastodon image tag (immutable tags are recommended)                                                                                                 | `4.2.0-debian-11-r0` |
 | `image.digest`           | Mastodon image digest in the way sha256:aa.... Please note this parameter, if set, will override the tag image tag (immutable tags are recommended) | `""`                 |
 | `image.pullPolicy`       | Mastodon image pull policy                                                                                                                          | `IfNotPresent`       |
 | `image.pullSecrets`      | Mastodon image pull secrets                                                                                                                         | `[]`                 |
@@ -428,7 +428,7 @@ The command removes all the Kubernetes components associated with the chart and 
 | `volumePermissions.enabled`                            | Enable init container that changes the owner/group of the PV mount point to `runAsUser:fsGroup` | `false`            |
 | `volumePermissions.image.registry`                     | OS Shell + Utility image registry                                                               | `docker.io`        |
 | `volumePermissions.image.repository`                   | OS Shell + Utility image repository                                                             | `bitnami/os-shell` |
-| `volumePermissions.image.tag`                          | OS Shell + Utility image tag (immutable tags are recommended)                                   | `11-debian-11-r57` |
+| `volumePermissions.image.tag`                          | OS Shell + Utility image tag (immutable tags are recommended)                                   | `11-debian-11-r77` |
 | `volumePermissions.image.pullPolicy`                   | OS Shell + Utility image pull policy                                                            | `IfNotPresent`     |
 | `volumePermissions.image.pullSecrets`                  | OS Shell + Utility image pull secrets                                                           | `[]`               |
 | `volumePermissions.resources.limits`                   | The resources limits for the init container                                                     | `{}`               |
@@ -675,6 +675,10 @@ As an alternative, use one of the preset configurations for pod affinity, pod an
 Find more information about how to deal with common errors related to Bitnami's Helm charts in [this troubleshooting guide](https://docs.bitnami.com/general/how-to/troubleshoot-helm-chart-issues).
 
 ## Upgrading
+
+### To 3.0.0
+
+This major updates the PostgreSQL subchart to its newest major, 13.0.0. [Here](https://github.com/bitnami/charts/tree/master/bitnami/postgresql#to-1300) you can find more information about the changes introduced in that version.
 
 ### 2.0.0
 
